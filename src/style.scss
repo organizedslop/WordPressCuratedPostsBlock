@@ -1,0 +1,132 @@
+.bd-curated-posts {
+    --curated-posts-default-thumbnail-size: 10rem;
+    --curated-posts-default-direction: "row";
+    --curated-posts-default-wrap: "nowrap";
+
+    --curated-posts-default-background-color: white;
+    --curated-posts-default-border-color: gray;
+    --curated-posts-default-border-thickness: 0.1rem;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    background-color: var(--curated-posts-default-background-color);
+
+}
+.bd-curated-posts--sidebar-scrollable-container {
+    align-items: flex-start;
+    border: 1px solid #d0d0d0;
+    border-radius: 0.15rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    max-height: 10rem;
+    max-width: 80%;
+    overflow-y: scroll;
+}
+.bd-curated-posts--sidebar-scrollable-container > * {
+    margin: 0.5rem !important; /* !important is necessary to override default WP editor style */
+}
+
+.bd-curated-posts--sidebar-label {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bd-curated-posts--featured-image {
+    border-radius: 0.125rem;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 1rem;
+    min-width: 1rem;
+    object-fit: cover; // contain;
+}
+
+.bd-curated-posts--title {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 1rem;
+    justify-content: center;
+    line-height: 1.2rem;
+    margin: 0;
+    padding: 1.25rem 0.4rem 0.667rem 0.4rem;
+    position: relative;
+    z-index: 0;
+}
+.bd-curated-posts--title::after {
+    content: "";
+    backdrop-filter: blur(0.667rem) saturate(150%);;
+    inset: 0;
+    mask: linear-gradient(0deg, black 33%, #ffffff00 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bd-curated-posts--debug-box {
+    border-radius: 0.2rem;
+    border: 
+        var(--curated-posts-default-border-thickness) 
+        solid 
+        var(--curated-posts-default-border-color);
+    display: flex;
+    flex-direction: column;
+    max-height: 8rem;
+    overflow-y: scroll;
+    padding: 0.25rem 0.5rem;
+}
+.bd-curated-posts--debug-box > *, .bd-curated-posts--debug-box > * > * {
+    font-size: 0.8rem;
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+.bd-curated-posts--posts-box {
+    border: 
+        0.1rem 
+        solid 
+        var(--curated-posts-default-border-color);;
+    align-items: center;
+    display: flex;
+    flex-direction: var(--curated-posts-default-direction);
+    flex-wrap: var(--curated-posts-default-wrap);
+    justify-content: flex-start;
+    max-width: 100vw;
+    padding: 0.25rem 0.5rem;
+    overflow-x: scroll;
+}
+
+.bd-curated-posts--post {
+    background-color: var(--curated-posts-default-background-color);;
+    border: 
+        var(--curated-posts-default-border-thickness) 
+        solid 
+        var(--curated-posts-default-border-color);;
+    border-radius: 0.33rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0.25rem; /* Space between posts divided by 2 */
+    width:      var(--curated-posts-default-thumbnail-size);
+    max-width:  var(--curated-posts-default-thumbnail-size);
+    min-width:  var(--curated-posts-default-thumbnail-size);
+    height:     var(--curated-posts-default-thumbnail-size);
+    max-height: var(--curated-posts-default-thumbnail-size);
+    min-height: var(--curated-posts-default-thumbnail-size);
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none !important;
+}
